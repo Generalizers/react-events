@@ -1,5 +1,5 @@
 {
-  "name": "react-dev-template",
+  "name": "react-events",
   "version": "1.0.0",
   "description": "",
   "main": "./src/module.ts",
@@ -20,7 +20,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Generalizers/react-dev-template.git"
+    "url": "git+https://github.com/Generalizers/react-events.git"
   },
   "keywords": [
     "template",
@@ -31,9 +31,9 @@
   "author": "Alan Blanchet",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/Generalizers/react-dev-template/issues"
+    "url": "https://github.com/Generalizers/react-events/issues"
   },
-  "homepage": "https://github.com/Generalizers/react-dev-template#readme",
+  "homepage": "https://github.com/Generalizers/react-events#readme",
   "files": [
     "lib/"
   ],

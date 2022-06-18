@@ -1,3 +1,3 @@
-type LIB = 'LIB';
+import { useContextMenu, useEvent, useKey, useMouse } from './utils/events';
 
-export { LIB };
+export { useMouse, useKey, useContextMenu, useEvent };
