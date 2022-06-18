@@ -1,4 +1,4 @@
-import { useKey } from 'utils/events';
+import { useKey } from '../../utils/events';
 
 useKey(
   'down',

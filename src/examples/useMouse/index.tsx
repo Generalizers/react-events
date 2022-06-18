@@ -1,4 +1,4 @@
-import { useMouse } from 'utils/events';
+import { useMouse } from '../../utils/events';
 
 useMouse(
   'click',

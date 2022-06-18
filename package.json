@@ -1,5 +1,5 @@
 {
-  "name": "react-events",
+  "name": "@generalizers/react-events",
   "version": "1.0.0",
   "description": "",
   "main": "./src/module.ts",
