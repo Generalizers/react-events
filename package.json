@@ -10,7 +10,7 @@
     "serve": "webpack serve --config ./webpack/webpack.dev.js --open",
     "test": "jest a --watch",
     "lib": "tsconfig-replace-paths --project tsconfig.json && webpack --config ./webpack/webpack.lib.js",
-    "lib:publish": "npm run lib && npm publish",
+    "lib:publish": "npm run lib && npm publish --access=public",
     "patch": "npm version --no-git-tag-version patch",
     "minor": "npm version --no-git-tag-version minor",
     "major": "npm version --no-git-tag-version major",
@@ -28,6 +28,7 @@
     "webpack",
     "lib"
   ],
+  "private": false,
   "author": "Alan Blanchet",
   "license": "MIT",
   "bugs": {
