@@ -1,4 +1,4 @@
-# @generalizers/react-query
+# @generalizers/react-events
 
 **Author** : Alan BLANCHET
 

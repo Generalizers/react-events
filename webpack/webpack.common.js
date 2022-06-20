@@ -29,6 +29,10 @@ module.exports = {
           fullySpecified: false,
         },
       },
+      {
+        test: /\.scss/,
+        use: ['style-loader', 'css-loader', 'sass-loader'],
+      },
     ],
   },
   resolve: {

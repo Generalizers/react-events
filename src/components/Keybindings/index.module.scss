@@ -1,0 +1,77 @@
+.main {
+  display: flex;
+  flex-direction: column;
+  background-color: rgb(50, 50, 50);
+
+  > div {
+    display: flex;
+    flex-direction: column;
+    padding: 5px;
+    border-radius: 5px;
+    > div {
+      background-color: #0002;
+      margin: 5px;
+      border-radius: 5px;
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      transition: 0.3s;
+      cursor: pointer;
+
+      &:hover {
+        background-color: #0004;
+      }
+    }
+  }
+
+  &Key {
+    background-color: #00000011;
+    margin: 5px;
+    padding: 5px 10px;
+    border-radius: 5px;
+
+    &s {
+      display: flex;
+      flex-grow: 2;
+      justify-content: center;
+      align-items: center;
+      user-select: none;
+      background-color: #ffffff05;
+      border-radius: 5px;
+    }
+  }
+
+  &Seperation {
+    align-self: stretch;
+    width: 3px;
+    margin: 10px 5px;
+    border-radius: 5px;
+    background-color: #fff1;
+  }
+
+  &Name {
+    display: flex;
+    justify-content: flex-end;
+    width: 10%;
+    min-width: 100px;
+    margin: 5px;
+    flex-grow: 1;
+    > div {
+      border-radius: 5px;
+      padding: 10px 20px;
+      box-sizing: border-box;
+      background-color: #fff1;
+    }
+  }
+
+  &Desc {
+    padding: 15px;
+    margin: 5px 10px;
+    border-radius: 5px;
+    width: 20%;
+    flex-grow: 1;
+    &:not(:empty) {
+      background-color: rgb(40, 40, 40);
+    }
+  }
+}
