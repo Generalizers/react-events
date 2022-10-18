@@ -1,5 +1,7 @@
 import { DependencyList, useEffect } from 'react';
 
+window;
+
 /**
  * Allows to use a document event listener
  * @param type The type of DOM event
@@ -10,11 +12,12 @@ export const useEvent = (
   type: keyof DocumentEventMap,
   f: (this: Document, ev: DocumentEventMap[keyof DocumentEventMap]) => any,
   deps?: DependencyList,
+  element: Window | Document | Element = document,
 ) => {
   useEffect(() => {
-    document.addEventListener(type, f);
+    element.addEventListener(type, f);
     return () => {
-      document.removeEventListener(type, f);
+      element.removeEventListener(type, f);
     };
   }, deps ?? []);
 };
@@ -41,11 +44,13 @@ export const useKey = (
   type: KeyType,
   f: (this: Document, ev: KeyboardEvent) => any,
   deps?: DependencyList,
+  element: Window | Document | Element = document,
 ) => {
   useEvent(
     `key${type}`,
     f as (this: Document, ev: DocumentEventMap[keyof DocumentEventMap]) => any,
     deps,
+    element,
   );
 };
 
@@ -60,11 +65,13 @@ export const useMouse = (
   type: MouseType,
   f: (e: MouseEvent) => any,
   deps?: DependencyList,
+  element: Window | Document | Element = document,
 ) => {
   useEvent(
     type == 'click' ? type : `mouse${type}`,
     f as (this: Document, ev: DocumentEventMap[keyof DocumentEventMap]) => any,
     deps,
+    element,
   );
 };
 
@@ -77,11 +84,13 @@ export const useMouse = (
 export const useContextMenu = (
   f: (e: Event) => any,
   deps?: DependencyList,
+  element: Window | Document | Element = document,
 ): void => {
   useEvent(
     'contextmenu',
     f as (this: Document, ev: DocumentEventMap[keyof DocumentEventMap]) => any,
     deps,
+    element,
   );
 };
 
