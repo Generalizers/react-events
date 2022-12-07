@@ -5,13 +5,15 @@ import {
 } from 'utils/keybindings';
 
 import { useContextMenu, useEvent, useKey, useMouse } from './utils/events';
+import { useTrigger } from './utils/hooks';
 
 export {
-  useMouse,
   useKey,
-  useContextMenu,
   useEvent,
-  KeybindingsProvider,
+  useMouse,
+  useTrigger,
   useKeybinder,
   useKeybindings,
+  useContextMenu,
+  KeybindingsProvider,
 };
