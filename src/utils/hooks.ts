@@ -1,16 +1,16 @@
 import { useState } from 'react';
 
-export const useEventPrepare = <T, U extends Function>(
+export const useEventPrepare = <T, U extends Function, P extends Event = any>(
   [state, setState]: [T, U],
-  handler?: (e: Event) => any,
+  handler?: (e: P) => any,
 ): [
   T,
-  (...s: U extends (...p: infer A) => any ? A : never) => (e: Event) => any,
+  (...s: U extends (...p: infer A) => any ? A : never) => (e: P) => any,
 ] => {
   return [
     state,
     (...p: U extends (...p: infer A) => any ? A : never) =>
-      (e: Event) => (handler?.(e), setState(p)),
+      (e: P) => (handler?.(e), setState(p)),
   ] as any;
 };
 
@@ -19,5 +19,3 @@ export const useTrigger = (def: boolean = false) => {
   const f = (b: boolean = !trigger) => setTrigger(b);
   return [trigger, f] as [typeof trigger, typeof f];
 };
-
-const [s, setS] = useEventPrepare(useTrigger(false));
